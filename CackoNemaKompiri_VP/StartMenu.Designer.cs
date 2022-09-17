@@ -39,14 +39,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblHS = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.MP = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MP)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +57,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(113, 60);
+            this.label1.Location = new System.Drawing.Point(113, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(588, 64);
             this.label1.TabIndex = 0;
@@ -67,7 +69,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(12, 18);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 25);
             this.label2.TabIndex = 1;
@@ -164,17 +166,17 @@
             this.pictureBox6.TabIndex = 4;
             this.pictureBox6.TabStop = false;
             // 
-            // label5
+            // lblHS
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(148, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "0";
+            this.lblHS.AutoSize = true;
+            this.lblHS.BackColor = System.Drawing.Color.Transparent;
+            this.lblHS.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblHS.Location = new System.Drawing.Point(141, 9);
+            this.lblHS.Name = "lblHS";
+            this.lblHS.Size = new System.Drawing.Size(25, 25);
+            this.lblHS.TabIndex = 1;
+            this.lblHS.Text = "0";
             // 
             // label6
             // 
@@ -188,6 +190,16 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "( Cacko has no potatoes )";
             // 
+            // MP
+            // 
+            this.MP.AccessibleName = "MP";
+            this.MP.Enabled = true;
+            this.MP.Location = new System.Drawing.Point(17, 400);
+            this.MP.Name = "MP";
+            this.MP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MP.OcxState")));
+            this.MP.Size = new System.Drawing.Size(39, 38);
+            this.MP.TabIndex = 5;
+            // 
             // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +207,7 @@
             this.BackgroundImage = global::CackoNemaKompiri_VP.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(798, 448);
+            this.Controls.Add(this.MP);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox5);
@@ -203,7 +216,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblHS);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
@@ -211,6 +224,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Цацко нема компири";
             this.Load += new System.EventHandler(this.StartMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -219,6 +233,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +251,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblHS;
         private System.Windows.Forms.Label label6;
+        private AxWMPLib.AxWindowsMediaPlayer MP;
     }
 }

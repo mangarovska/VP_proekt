@@ -10,3 +10,8 @@ D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.exe
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.pdb
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.StartMenu.resources
+D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\bin\Debug\Interop.WMPLib.dll
+D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\bin\Debug\AxInterop.WMPLib.dll
+D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\Interop.WMPLib.dll
+D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\AxInterop.WMPLib.dll
+D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.csproj.ResolveComReference.cache

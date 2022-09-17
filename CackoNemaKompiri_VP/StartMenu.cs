@@ -8,29 +8,45 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
-
+using WMPLib;
 
 namespace CackoNemaKompiri_VP
 {
     public partial class StartMenu : Form
     {
-        SoundPlayer player;
+        public SoundPlayer player;
+        public SoundPlayer intro;
+
         public StartMenu()
         {
             InitializeComponent();
-            player = new SoundPlayer("INTRO.wav"); // mi treba wav
-            
+            lblHS.Text = Properties.Settings.Default.highScore;
+
+            MP.Visible = false;
+            MP.URL = @"Gradinarot.wav";
+            MP.settings.playCount = 9999; // looping
+            MP.settings.volume = 30;
+            MP.Ctlcontrols.play();
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Form1 game = new Form1();
-            game.Show(); 
+            MP.Ctlcontrols.stop();
+            this.Hide();
+            game.Show();
+        }
+
+        private void PlayIntro()
+        {
+            intro = new SoundPlayer(@"INTRO.wav");
+            intro.Play();
         }
 
         private void StartMenu_Load(object sender, EventArgs e)
         {
-            player.Play();
+            PlayIntro();
         }
     }
 }

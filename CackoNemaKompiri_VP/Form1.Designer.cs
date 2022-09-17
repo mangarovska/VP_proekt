@@ -54,6 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.MPForm = new AxWMPLib.AxWindowsMediaPlayer();
+            this.label5 = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.life5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.life4)).BeginInit();
@@ -67,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
             this.pausedMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MPForm)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
@@ -342,6 +345,27 @@
             this.label3.Text = "Restart";
             this.label3.Click += new System.EventHandler(this.lblRestart_Click);
             // 
+            // MPForm
+            // 
+            this.MPForm.Enabled = true;
+            this.MPForm.Location = new System.Drawing.Point(12, 63);
+            this.MPForm.Name = "MPForm";
+            this.MPForm.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("MPForm.OcxState")));
+            this.MPForm.Size = new System.Drawing.Size(37, 35);
+            this.MPForm.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Info;
+            this.label5.Location = new System.Drawing.Point(493, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 25);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "FLOOR 1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +373,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(215)))), ((int)(((byte)(206)))));
             this.BackgroundImage = global::CackoNemaKompiri_VP.Properties.Resources.plocki;
             this.ClientSize = new System.Drawing.Size(614, 761);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.MPForm);
             this.Controls.Add(this.pbPlay);
             this.Controls.Add(this.pbMute);
             this.Controls.Add(this.pausedMenu);
@@ -389,6 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
             this.pausedMenu.ResumeLayout(false);
             this.pausedMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MPForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,6 +447,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private AxWMPLib.AxWindowsMediaPlayer MPForm;
+        private System.Windows.Forms.Label label5;
     }
 }
 

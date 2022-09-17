@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using WMPLib;
 
 namespace CackoNemaKompiri_VP
 {
@@ -23,7 +24,8 @@ namespace CackoNemaKompiri_VP
         Random randomY = new Random();
 
         PictureBox splash = new PictureBox();
-        SoundPlayer player;
+        SoundPlayer fin;
+        SoundPlayer sp;
 
         void hearts()
         {
@@ -46,11 +48,13 @@ namespace CackoNemaKompiri_VP
             if (missed == 5)
             {
                 life5.Image = Properties.Resources.GREYheart;
-                //lblGameOver.Show();
                 timer.Stop();
-                //MessageBox.Show("Game over!\nClick to restart!");
                 Menu.Show();
-                //restartGame();
+
+                fin = new SoundPlayer(@"FIN.wav");
+                fin.Play();
+
+
             }
         }
 
@@ -61,8 +65,12 @@ namespace CackoNemaKompiri_VP
             Menu.Hide();
             pausedMenu.Hide();
             restartGame();
-            //lblHighScoreValue.Text = Properties.Settings.Default.highScore;
-            player = new SoundPlayer("Gradinarot.wav");
+
+            MPForm.Visible = false;
+            MPForm.URL = @"Gradinarot.wav";
+            MPForm.settings.playCount = 9999; // looping
+            MPForm.Ctlcontrols.play();
+
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -108,6 +116,9 @@ namespace CackoNemaKompiri_VP
                         splash.Width = 70;
                         splash.SizeMode = PictureBoxSizeMode.StretchImage;
                         splash.BackColor = Color.Transparent;
+                        
+                        sp = new SoundPlayer(@"splat.wav");
+                        sp.PlaySync();
 
                         this.Controls.Add(splash);
 
@@ -115,7 +126,14 @@ namespace CackoNemaKompiri_VP
                         c.Left = randomX.Next(5, this.ClientSize.Width - c.Width);
                         missed += 1;
                         hearts();
-                        Cacko.Image = Properties.Resources.rightERROR;
+
+                        if(Cacko.Image == Properties.Resources.left) {   // ???????????????
+                            Cacko.Image = Properties.Resources.leftERROR;
+                        } else
+                        {
+                            Cacko.Image = Properties.Resources.rightERROR;
+                        }
+                        
                     }
 
                     if (Cacko.Bounds.IntersectsWith(c.Bounds))
@@ -173,20 +191,20 @@ namespace CackoNemaKompiri_VP
         private void Form1_Load(object sender, EventArgs e)
         {
             
-            player.PlayLooping();
+            //player.PlayLooping();
+           
         }
 
         private void pbPlay_Click(object sender, EventArgs e)
         {
-            
-            player.Stop();
+            MPForm.Ctlcontrols.pause();     
             pbMute.Visible = true;
             pbPlay.Visible = false;
         }
 
         private void pbMute_Click(object sender, EventArgs e)
         {
-            player.PlayLooping();
+            MPForm.Ctlcontrols.play();
             pbMute.Visible = false;
             pbPlay.Visible = true;
         }
@@ -206,8 +224,6 @@ namespace CackoNemaKompiri_VP
                     // random gi spawn-nuva
                     x.Top = randomY.Next(80, 300) * -1;
                     x.Left = randomX.Next(5, this.ClientSize.Width - x.Width);
-
-
                 }
             }
 
