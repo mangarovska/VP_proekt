@@ -47,6 +47,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Cacko = new System.Windows.Forms.PictureBox();
+            this.pbMute = new System.Windows.Forms.PictureBox();
+            this.pbPlay = new System.Windows.Forms.PictureBox();
+            this.pausedMenu = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.life5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.life4)).BeginInit();
@@ -57,6 +64,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cacko)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
+            this.pausedMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer
@@ -91,10 +101,10 @@
             // 
             this.lblHighScore.AutoSize = true;
             this.lblHighScore.BackColor = System.Drawing.Color.Transparent;
-            this.lblHighScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScore.Location = new System.Drawing.Point(12, 12);
+            this.lblHighScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHighScore.Location = new System.Drawing.Point(71, 12);
             this.lblHighScore.Name = "lblHighScore";
-            this.lblHighScore.Size = new System.Drawing.Size(103, 20);
+            this.lblHighScore.Size = new System.Drawing.Size(121, 24);
             this.lblHighScore.TabIndex = 2;
             this.lblHighScore.Text = "High Score:";
             // 
@@ -102,10 +112,10 @@
             // 
             this.lblHighScoreValue.AutoSize = true;
             this.lblHighScoreValue.BackColor = System.Drawing.Color.Transparent;
-            this.lblHighScoreValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighScoreValue.Location = new System.Drawing.Point(111, 12);
+            this.lblHighScoreValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHighScoreValue.Location = new System.Drawing.Point(188, 12);
             this.lblHighScoreValue.Name = "lblHighScoreValue";
-            this.lblHighScoreValue.Size = new System.Drawing.Size(19, 20);
+            this.lblHighScoreValue.Size = new System.Drawing.Size(21, 24);
             this.lblHighScoreValue.TabIndex = 2;
             this.lblHighScoreValue.Text = "0";
             // 
@@ -121,7 +131,6 @@
             this.Menu.Size = new System.Drawing.Size(434, 183);
             this.Menu.TabIndex = 8;
             this.Menu.TabStop = false;
-            this.Menu.Text = "Menu:";
             // 
             // lblQuit
             // 
@@ -140,7 +149,7 @@
             this.lblScore.AutoSize = true;
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblScore.Location = new System.Drawing.Point(12, 32);
+            this.lblScore.Location = new System.Drawing.Point(71, 36);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(88, 24);
             this.lblScore.TabIndex = 2;
@@ -150,7 +159,7 @@
             // 
             this.life5.BackColor = System.Drawing.Color.Transparent;
             this.life5.Image = ((System.Drawing.Image)(resources.GetObject("life5.Image")));
-            this.life5.Location = new System.Drawing.Point(558, 12);
+            this.life5.Location = new System.Drawing.Point(562, 23);
             this.life5.Name = "life5";
             this.life5.Size = new System.Drawing.Size(40, 34);
             this.life5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +170,7 @@
             // 
             this.life4.BackColor = System.Drawing.Color.Transparent;
             this.life4.Image = ((System.Drawing.Image)(resources.GetObject("life4.Image")));
-            this.life4.Location = new System.Drawing.Point(515, 12);
+            this.life4.Location = new System.Drawing.Point(519, 23);
             this.life4.Name = "life4";
             this.life4.Size = new System.Drawing.Size(40, 34);
             this.life4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,7 +181,7 @@
             // 
             this.life3.BackColor = System.Drawing.Color.Transparent;
             this.life3.Image = ((System.Drawing.Image)(resources.GetObject("life3.Image")));
-            this.life3.Location = new System.Drawing.Point(469, 12);
+            this.life3.Location = new System.Drawing.Point(473, 23);
             this.life3.Name = "life3";
             this.life3.Size = new System.Drawing.Size(40, 34);
             this.life3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -183,7 +192,7 @@
             // 
             this.life2.BackColor = System.Drawing.Color.Transparent;
             this.life2.Image = ((System.Drawing.Image)(resources.GetObject("life2.Image")));
-            this.life2.Location = new System.Drawing.Point(423, 12);
+            this.life2.Location = new System.Drawing.Point(427, 23);
             this.life2.Name = "life2";
             this.life2.Size = new System.Drawing.Size(40, 34);
             this.life2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -194,7 +203,7 @@
             // 
             this.life1.BackColor = System.Drawing.Color.Transparent;
             this.life1.Image = global::CackoNemaKompiri_VP.Properties.Resources.heart;
-            this.life1.Location = new System.Drawing.Point(377, 12);
+            this.life1.Location = new System.Drawing.Point(381, 23);
             this.life1.Name = "life1";
             this.life1.Size = new System.Drawing.Size(40, 34);
             this.life1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -229,7 +238,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(58, 110);
+            this.pictureBox4.Location = new System.Drawing.Point(75, 110);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(43, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,6 +257,91 @@
             this.Cacko.TabIndex = 3;
             this.Cacko.TabStop = false;
             // 
+            // pbMute
+            // 
+            this.pbMute.BackColor = System.Drawing.Color.Transparent;
+            this.pbMute.Image = global::CackoNemaKompiri_VP.Properties.Resources.mute;
+            this.pbMute.Location = new System.Drawing.Point(12, 12);
+            this.pbMute.Name = "pbMute";
+            this.pbMute.Size = new System.Drawing.Size(45, 45);
+            this.pbMute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMute.TabIndex = 10;
+            this.pbMute.TabStop = false;
+            this.pbMute.Click += new System.EventHandler(this.pbMute_Click);
+            // 
+            // pbPlay
+            // 
+            this.pbPlay.BackColor = System.Drawing.Color.Transparent;
+            this.pbPlay.Image = global::CackoNemaKompiri_VP.Properties.Resources.play;
+            this.pbPlay.Location = new System.Drawing.Point(12, 12);
+            this.pbPlay.Name = "pbPlay";
+            this.pbPlay.Size = new System.Drawing.Size(45, 45);
+            this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPlay.TabIndex = 10;
+            this.pbPlay.TabStop = false;
+            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
+            // 
+            // pausedMenu
+            // 
+            this.pausedMenu.BackColor = System.Drawing.Color.Transparent;
+            this.pausedMenu.Controls.Add(this.label1);
+            this.pausedMenu.Controls.Add(this.label2);
+            this.pausedMenu.Controls.Add(this.label4);
+            this.pausedMenu.Controls.Add(this.label3);
+            this.pausedMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pausedMenu.Location = new System.Drawing.Point(79, 216);
+            this.pausedMenu.Name = "pausedMenu";
+            this.pausedMenu.Size = new System.Drawing.Size(434, 206);
+            this.pausedMenu.TabIndex = 8;
+            this.pausedMenu.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(83, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(281, 39);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "GAME PAUSED";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(189, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Quit";
+            this.label2.Click += new System.EventHandler(this.lblQuit_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(165, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 24);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Continue";
+            this.label4.Click += new System.EventHandler(this.lblContinue_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(175, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 24);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Restart";
+            this.label3.Click += new System.EventHandler(this.lblRestart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +349,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(215)))), ((int)(((byte)(206)))));
             this.BackgroundImage = global::CackoNemaKompiri_VP.Properties.Resources.plocki;
             this.ClientSize = new System.Drawing.Size(614, 761);
+            this.Controls.Add(this.pbPlay);
+            this.Controls.Add(this.pbMute);
+            this.Controls.Add(this.pausedMenu);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.life5);
             this.Controls.Add(this.lblScore);
@@ -274,6 +371,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Цацко нема компири";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form_KeyUp);
             this.Menu.ResumeLayout(false);
@@ -287,6 +385,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cacko)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
+            this.pausedMenu.ResumeLayout(false);
+            this.pausedMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,6 +413,13 @@
         private System.Windows.Forms.GroupBox Menu;
         private System.Windows.Forms.Label lblQuit;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.PictureBox pbMute;
+        private System.Windows.Forms.PictureBox pbPlay;
+        private System.Windows.Forms.GroupBox pausedMenu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

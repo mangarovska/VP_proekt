@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace CackoNemaKompiri_VP
 {
@@ -22,6 +23,7 @@ namespace CackoNemaKompiri_VP
         Random randomY = new Random();
 
         PictureBox splash = new PictureBox();
+        SoundPlayer player;
 
         void hearts()
         {
@@ -57,8 +59,20 @@ namespace CackoNemaKompiri_VP
             InitializeComponent();
             //lblGameOver.Hide();
             Menu.Hide();
+            pausedMenu.Hide();
             restartGame();
             //lblHighScoreValue.Text = Properties.Settings.Default.highScore;
+            player = new SoundPlayer("Gradinarot.wav");
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if(keyData == Keys.Escape)
+            {
+                timer.Stop();
+                pausedMenu.Show();
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -156,6 +170,33 @@ namespace CackoNemaKompiri_VP
             Application.Exit();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+            player.PlayLooping();
+        }
+
+        private void pbPlay_Click(object sender, EventArgs e)
+        {
+            
+            player.Stop();
+            pbMute.Visible = true;
+            pbPlay.Visible = false;
+        }
+
+        private void pbMute_Click(object sender, EventArgs e)
+        {
+            player.PlayLooping();
+            pbMute.Visible = false;
+            pbPlay.Visible = true;
+        }
+
+        private void lblContinue_Click(object sender, EventArgs e)
+        {
+            timer.Start();
+            pausedMenu.Visible = false;
+        }
+
         private void restartGame()
         {
             foreach (Control x in this.Controls)
@@ -178,6 +219,7 @@ namespace CackoNemaKompiri_VP
 
             //lblGameOver.Hide();
             Menu.Hide();
+            pausedMenu.Hide();
 
             lblHighScoreValue.Text = Properties.Settings.Default.highScore;
 
