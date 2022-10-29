@@ -32,7 +32,6 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
  * Continue - да се продолжи играта понатаму
  * Restart - играта да почне одново
  * Quit - да се изгаси апликацијата
-
-<br><br>
+<br>
 ### How it's made ?
 
