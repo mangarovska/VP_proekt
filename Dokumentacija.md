@@ -29,9 +29,9 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 ![Screenshot_4](https://user-images.githubusercontent.com/80720596/198855492-386b08a6-d2d4-4a2b-a149-5befcfeb82a8.png) <br>
 
 На копчето од тастатура Escape играта се паузира и на екран во истиот прозорец се појавуваат 3 опции:
-* Continue - да се продолжи играта понатаму
-* Restart - играта да почне одново
-* Quit - да се изгаси апликацијата
+ * Continue - да се продолжи играта понатаму
+ * Restart - играта да почне одново
+ * Quit - да се изгаси апликацијата
 
 <br>
 ### How it's made ?
