@@ -14,7 +14,6 @@ namespace CackoNemaKompiri_VP
 {
     public partial class StartMenu : Form
     {
-        public SoundPlayer player;
         public SoundPlayer intro;
 
         public StartMenu()

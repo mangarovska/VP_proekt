@@ -18,7 +18,10 @@ namespace CackoNemaKompiri_VP
         int speed = 8;
         int score = 0;
         int missed = 0;
+        int counterSpeed = 0;
+        int floor = 1;
         //int life;
+        int dir = 0; // 0 - levo; 1 - desno
 
         Random randomX = new Random();
         Random randomY = new Random();
@@ -26,6 +29,17 @@ namespace CackoNemaKompiri_VP
         PictureBox splash = new PictureBox();
         SoundPlayer fin;
         SoundPlayer sp;
+
+        const string R_one = "I";
+        const string R_two = "II";
+        const string R_three = "III";
+        const string R_four = "IV";
+        const string R_five = "V";
+        const string R_six = "VI";
+        const string R_seven = "VII";
+        const string R_eight = "VIII";
+        const string R_nine = "IX";
+        const string R_ten = "X"; // ovde e tosho xD
 
         void hearts()
         {
@@ -53,7 +67,6 @@ namespace CackoNemaKompiri_VP
 
                 fin = new SoundPlayer(@"FIN.wav");
                 fin.Play();
-
 
             }
         }
@@ -92,18 +105,20 @@ namespace CackoNemaKompiri_VP
             {
                 Cacko.Left -= 15;
                 Cacko.Image = Properties.Resources.left;
+                dir = 0;
             }
 
             if (right == true && Cacko.Left + Cacko.Width < this.ClientSize.Width)
             {
                 Cacko.Left += 15; // go pomestuva igracot 12 pixels levo
                 Cacko.Image = Properties.Resources.right; // menuva slika
+                dir = 1;
             }
 
             foreach (Control c in this.Controls)
             {
 
-                if (c is PictureBox && (string)c.Tag == "Kompiri")
+                if (c is PictureBox && (string)c.Tag == "Kompiri") // ako e kompir
                 {
 
                     c.Top += speed; // nosi nadolu
@@ -127,27 +142,69 @@ namespace CackoNemaKompiri_VP
                         missed += 1;
                         hearts();
 
-                        if(Cacko.Image == Properties.Resources.left) {   // ???????????????
+                        if(dir == 0) {   // ?????????? da pojavi error vo nasokata koja odel
                             Cacko.Image = Properties.Resources.leftERROR;
-                        } else
+                        } 
+                        else if (dir == 1)
                         {
                             Cacko.Image = Properties.Resources.rightERROR;
                         }
                         
                     }
 
-                    if (Cacko.Bounds.IntersectsWith(c.Bounds))
+                    if (Cacko.Bounds.IntersectsWith(c.Bounds)) // go sobral kompirot
                     {
                         c.Top = randomY.Next(80, 300) * -1;
                         c.Left = randomX.Next(5, this.ClientSize.Width - c.Width);
                         score += 1;
+                        counterSpeed += 1;
                     }
                 }
             }
 
-            if (score > 10)
+            if (counterSpeed == 10) // na sekoj 10ti kompir da se zgolemi brzinata
             {
-                speed = 12; // zgolemuva brzina na paganje na kompirite
+                speed += 3; // zgolemuva brzina na paganje na kompirite
+                counterSpeed = 0;
+                floor += 1;
+
+                switch (floor)
+                {
+                    case 1:
+                        lblFloorNumber.Text = R_one;
+                        break;
+                    case 2:
+                        lblFloorNumber.Text = R_two;
+                        break;
+                    case 3:
+                        lblFloorNumber.Text = R_three;
+                        break;
+                    case 4:
+                        lblFloorNumber.Text = R_four;
+                        break;
+                    case 5:
+                        lblFloorNumber.Text = R_five;
+                        break;
+                    case 6:
+                        lblFloorNumber.Text = R_six;
+                        break;
+                    case 7:
+                        lblFloorNumber.Text = R_seven;
+                        break;
+                    case 8:
+                        lblFloorNumber.Text = R_eight;
+                        break;
+                    case 9:
+                        lblFloorNumber.Text = R_nine;
+                        break;
+                    case 10:
+                        lblFloorNumber.Text = R_ten;
+                        break;
+                    default:
+                        lblFloorNumber.Text = "xD";
+                        break;
+                }
+                
             }
 
         }
@@ -256,6 +313,9 @@ namespace CackoNemaKompiri_VP
 
             left = false;
             right = false;
+
+            counterSpeed = 0;
+            floor = 1;
 
             timer.Start();
         }
