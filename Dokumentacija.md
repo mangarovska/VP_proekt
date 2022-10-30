@@ -6,7 +6,7 @@
 
 Инспирација за конкретно оваа од тој тип на игри е скеч од К-15 насловен "Цацко нема компири" : <br>
 https://www.youtube.com/watch?v=OnZWBggRHw0
-<br><br>
+<br>
 ### Start Menu:
 При укуличување на играта првиот прозорец со кој се среќава играчот е следниот: <br>
 
@@ -117,7 +117,6 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 
                 fin = new SoundPlayer(@"FIN.wav");
                 fin.Play();
-
             }
         }
 ```
@@ -127,6 +126,36 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 
 ![Screenshot_5](https://user-images.githubusercontent.com/80720596/198886746-0e952cf6-4c46-4a21-a345-9cd66aa82580.png) <br>
 
+### High Score:
+Најголемиот постигнат резултат е прикажан на двата прозорци кои се појавуваат. Доколку играчот постигне поголем резултат од моменталниот максимален се поставува новодобиениот резултат за High Score. Ова е реализирано со додавање на вредност во Properties -> Settings табот со default вредности која може да се пристапи и промени со `Properties.Settings.Default.highScore`. Оваа вредност се памти и се вчитува со секое вклучување на апликацијата.
+
+### Score:
+Оваа вредност се поставува на 0 со секое вклучување на играта и го означува тековниот резултат на играчот.
+
+### Mute/Unmute:
+И во оваа форма ја има Windows Music PLayer алатката кој е придружен со 2 слики кои се наоѓаат на иста локација и наизменично се менуваат при клик (во едно време само една е видлива). Секоја од нив означува една од 2 состојби:
+1. Сликата е зелена, музиката се слуша -> при клик на зеленото копче музиката се паузира и копчето станува црвено.
+2. Сликата е црвна, музиката е паузирана -> при клик музиката продолжува и копчето станува зелено.
+
+Реализирано на следниот начин:
+
+```
+        private void pbPlay_Click(object sender, EventArgs e)
+        {
+            MPForm.Ctlcontrols.pause();     
+            pbMute.Visible = true;
+            pbPlay.Visible = false;
+        }
+
+        private void pbMute_Click(object sender, EventArgs e)
+        {
+            MPForm.Ctlcontrols.play();
+            pbMute.Visible = false;
+            pbPlay.Visible = true;
+        }
+```
+
+### Kompiri:
 
 
 
