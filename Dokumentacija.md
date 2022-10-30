@@ -29,7 +29,7 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 ### The Basics & How to Play:
 Играчот(со ликот на Цацко) може да се движи лево и десно со помош на стрелките од тастатура или копчињата А и D (како што е наведено и на почетниот прозорец). Ова е овозможено на следниот начин:
 
-```
+```c#
         private void Form_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
@@ -139,7 +139,7 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 
 Реализирано на следниот начин:
 
-```
+```c#
         private void pbPlay_Click(object sender, EventArgs e)
         {
             MPForm.Ctlcontrols.pause();     
@@ -155,7 +155,70 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
         }
 ```
 
-### Kompiri:
+### Floors:
+Бидејќи во скечот Цацко се качува 10 катови за да побара компири од Тошо решив левелите во играта да се репрезентирани со римски броеви на катови.
+```c#
+        const string R_one = "I";
+        const string R_two = "II";
+        const string R_three = "III";
+        const string R_four = "IV";
+        const string R_five = "V";
+        const string R_six = "VI";
+        const string R_seven = "VII";
+        const string R_eight = "VIII";
+        const string R_nine = "IX";
+        const string R_ten = "X"; // na ovoj kat e Tosho xD
+```
+
+Бидејќи секој левел/кат брзината на паѓање на компирите се зголемува, а левелот се зголемува со секој 10ти собран компир менувањето број на кат е имплементирано на следниот начин:
+
+```c#
+if (counterSpeed == 10) // na sekoj 10ti kompir da se zgolemi brzinata
+            {
+                speed += 3; // zgolemuva brzina na paganje na kompirite
+                counterSpeed = 0;
+                floor += 1;
+
+                switch (floor)
+                {
+                    case 1:
+                        lblFloorNumber.Text = R_one;
+                        break;
+                    case 2:
+                        lblFloorNumber.Text = R_two;
+                        break;
+                    case 3:
+                        lblFloorNumber.Text = R_three;
+                        break;
+                    case 4:
+                        lblFloorNumber.Text = R_four;
+                        break;
+                    case 5:
+                        lblFloorNumber.Text = R_five;
+                        break;
+                    case 6:
+                        lblFloorNumber.Text = R_six;
+                        break;
+                    case 7:
+                        lblFloorNumber.Text = R_seven;
+                        break;
+                    case 8:
+                        lblFloorNumber.Text = R_eight;
+                        break;
+                    case 9:
+                        lblFloorNumber.Text = R_nine;
+                        break;
+                    case 10:
+                        lblFloorNumber.Text = R_ten;
+                        break;
+                    default:
+                        lblFloorNumber.Text = "xD";
+                        break;
+                } 
+            }
+```
+
+### The Potatoes:
 
 
 
