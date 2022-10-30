@@ -13,13 +13,14 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 ![Screenshot_1](https://user-images.githubusercontent.com/54687796/198845106-28efcae4-ca5e-4d91-a66d-7485853e3e82.png) <br>
 
 Истиот при појавување е придружен со реченица на Цацко од видеото и со позната К-15 песна едитирана со цел да е соодветна инструментална позадинска музика на играта. Ова е овозможено со помош на класите `SoundPlayer` и `AxWMPLib.AxWindowsMediaPlayer` (Windows Media Player алатката од Toolbox) кои овозможуваат .wav фајловите да се пуштат паралелно со приклучување на апликацијата. <br>
+Изреката на Цацко се пушта само еднаш на почеток, а позадинската музика е наместена да се врти во циклус. <br>
 
 Со притисканје на копчето Start тековниот прозорец `StartMenu` го снемува и се појавува нов `Game` каде играта започнува. <br>
 ```c#        
         private void pbStart_Click(object sender, EventArgs e)
         {
             Game game = new Game();
-            MP.Ctlcontrols.stop();
+            MP.Ctlcontrols.stop(); // pozadinskata muzika zapira (i se pusta pak vo noviot prozorec)
             this.Hide();
             game.Show();
         }
@@ -43,10 +44,63 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
  * Continue - да се продолжи играта понатаму
  * Restart - играта да почне одново
  * Quit - да се изгаси апликацијата
-<br><br>
+Ова е овозможено со:
+```c#
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if(keyData == Keys.Escape)
+            {
+                timer.Stop();
+                pausedMenu.Show();
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+```
+<br>
 ### How it's made ?
 Најпрвин започнав со изгледот опишан погоре, со функционалноста на елементите и на крај со музиката и звучните ефекти.
 
-#### Start Button:
+#### 5 Hearts:
+Играчот има 5 животи или 5 можности да промаши компир. При градење во формата се ставени 5 полни срциња и со секое промашување се менува сликата на секое следно срце едно по едно почнувајќи од лево кон десно во црно-бело:
+```c#
+        void hearts()
+        {
+            if (missed == 1)
+            {
+                life1.Image = Properties.Resources.GREYheart;
+            }
+            if (missed == 2)
+            {
+                life2.Image = Properties.Resources.GREYheart;
+            }
+            if (missed == 3)
+            {
+                life3.Image = Properties.Resources.GREYheart;
+            }
+            if (missed == 4)
+            {
+                life4.Image = Properties.Resources.GREYheart;
+            }
+            if (missed == 5)
+            {
+                life5.Image = Properties.Resources.GREYheart;
+                timer.Stop();
+                Menu.Show();
+
+                fin = new SoundPlayer(@"FIN.wav");
+                fin.Play();
+
+            }
+        }
+```
+Кога играчот ќе ги изгуби сите животи се пушта уште една реченица на Цацко од видеото и се појавуваат 2 опции на екранот: <br>
+* Restart - за одново иницијализирање на истиот прозорец
+* Quit - за терминирање на апликацијата
+
+![Screenshot_5](https://user-images.githubusercontent.com/80720596/198886746-0e952cf6-4c46-4a21-a345-9cd66aa82580.png) <br>
+
+
+
+
 
 
