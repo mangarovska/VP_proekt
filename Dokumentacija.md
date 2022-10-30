@@ -12,6 +12,8 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 
 ![Screenshot_1](https://user-images.githubusercontent.com/54687796/198845106-28efcae4-ca5e-4d91-a66d-7485853e3e82.png) <br>
 
+Истиот е придружен со изрека на Цацко од видеото проследена со позната К-15 песна едитирана со цел да е соодветна инструментална позадинска музика на играта. Ова е овозможено со помош на класите `SoundPlayer` и `AxWMPLib.AxWindowsMediaPlayer`/Windows Media Player алатката од Toolbox кои овозможуваат .wav фајловите да се пуштат паралелно со приклучување на апликацијата. <br>
+
 Со притисканје на копчето Start се појавува нов прозорец и играта започнува.
 <br><br>
 ### The Basics & How to Play:
@@ -34,4 +36,8 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
  * Quit - да се изгаси апликацијата
 <br><br>
 ### How it's made ?
+Најпрвин започнав со изгледот опишан погоре, со функционалноста на елементите и на крај со музиката и звучните ефекти.
+
+#### Start Button:
+
 
