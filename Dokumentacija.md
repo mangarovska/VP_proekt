@@ -27,7 +27,35 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 ```        
 
 ### The Basics & How to Play:
-Играчот(со ликот на Цацко) може да се движи лево и десно со помош на стрелките од тастатура или копчињата А и D (како што е наведено и на почетниот прозорец).<br>
+Играчот(со ликот на Цацко) може да се движи лево и десно со помош на стрелките од тастатура или копчињата А и D (како што е наведено и на почетниот прозорец). Ова е овозможено на следниот начин:
+
+```
+        private void Form_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
+            {
+                left = false;
+            }
+            if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
+            {
+                right = false;
+            }
+
+        }
+
+        private void Form_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A) // pritisnato e kopce za levo
+            {
+                left = true;
+            }
+            if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D) // pritisnato e kopce za desno
+            {
+                right = true;
+            }
+        }
+```
+
 Целта е Цацко да собере што повеќе компири за пире без да промаши повеќе од 5 пати. <br>
 
 ![Screenshot_2](https://user-images.githubusercontent.com/80720596/198855322-3ecf6745-ede4-4689-b936-d6711f460a7f.png) <br>
@@ -85,7 +113,7 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
             {
                 life5.Image = Properties.Resources.GREYheart;
                 timer.Stop();
-                Menu.Show();
+                Menu.Show(); // Menu e GroupBox
 
                 fin = new SoundPlayer(@"FIN.wav");
                 fin.Play();
