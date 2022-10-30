@@ -56,6 +56,37 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
         }
 ```
 
+Исто така движењето на Цацкко е ограничено со услови во `timer_Tick()` функцијата:
+
+```c#
+            if (left == true && Cacko.Left > 0) // ako e pritisnato kopce za levo i levata strana na Cacko e > 0
+            {
+                Cacko.Left -= 15; // dvizi na levo 15 pixels
+                Cacko.Image = Properties.Resources.left; // ja menuva slikata za levo
+                dir = 0; // levo
+            }
+
+            if (right == true && Cacko.Left + Cacko.Width < this.ClientSize.Width) // ako e pritisnato kopce za desno i Cacko ne izlaga desno od ekran
+            {
+                Cacko.Left += 15; // go pomestuva igracot 15 pixels desno
+                Cacko.Image = Properties.Resources.right; // menuva slika za desno
+                dir = 1; // desno
+            }
+```
+
+Овде bool променливата `dir` ни служи како маркер за промена на сликата кога на Цацко ќе му паден компир. Уптребена е на следен начин:
+
+```c#
+                        if(dir == 0)
+                        {
+                            Cacko.Image = Properties.Resources.leftERROR;
+                        } 
+                        else if (dir == 1)
+                        {
+                            Cacko.Image = Properties.Resources.rightERROR;
+                        }
+```
+
 Целта е Цацко да собере што повеќе компири за пире без да промаши повеќе од 5 пати. <br>
 
 ![Screenshot_2](https://user-images.githubusercontent.com/80720596/198855322-3ecf6745-ede4-4689-b936-d6711f460a7f.png) <br>
@@ -219,6 +250,7 @@ if (counterSpeed == 10) // na sekoj 10ti kompir da se zgolemi brzinata
 ```
 
 ### The Potatoes:
+
 
 
 
