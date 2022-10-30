@@ -21,18 +21,12 @@ namespace CackoNemaKompiri_VP
             InitializeComponent();
             lblHS.Text = Properties.Settings.Default.highScore;
 
-            MP.Visible = false;
-            MP.URL = @"Gradinarot.wav";
-            MP.settings.playCount = 9999; // looping
-            MP.settings.volume = 30;
-            MP.Ctlcontrols.play();
-
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pbStart_Click(object sender, EventArgs e)
         {
-            Form1 game = new Form1();
-            MP.Ctlcontrols.stop();
+            Game game = new Game();
+            MP.Ctlcontrols.stop(); // pozadinskata muzika zapira (i se pushta pak vo noviot prozorec)
             this.Hide();
             game.Show();
         }
@@ -43,9 +37,19 @@ namespace CackoNemaKompiri_VP
             intro.Play();
         }
 
+        private void PlayMusic()
+        {
+            MP.Visible = false;
+            MP.URL = @"Gradinarot.wav";
+            MP.settings.playCount = 9999; // looping
+            MP.settings.volume = 30;
+            MP.Ctlcontrols.play();
+        }
+
         private void StartMenu_Load(object sender, EventArgs e)
         {
-            PlayIntro();
+            PlayMusic();
+            PlayIntro();  
         }
     }
 }

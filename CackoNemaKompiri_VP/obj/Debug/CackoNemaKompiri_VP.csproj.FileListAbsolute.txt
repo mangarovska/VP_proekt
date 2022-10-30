@@ -3,7 +3,6 @@ D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\bin\Debug\CackoNemaKompiri_
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\bin\Debug\CackoNemaKompiri_VP.pdb
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.csproj.AssemblyReference.cache
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.csproj.SuggestedBindingRedirects.cache
-D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.Form1.resources
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.Properties.Resources.resources
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.csproj.GenerateResource.cache
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.csproj.CoreCompileInputs.cache
@@ -15,3 +14,4 @@ D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\bin\Debug\AxInterop.WMPLib.
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\Interop.WMPLib.dll
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\AxInterop.WMPLib.dll
 D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.csproj.ResolveComReference.cache
+D:\myDesktop\CackoNemaKompiri_VP\CackoNemaKompiri_VP\obj\Debug\CackoNemaKompiri_VP.Game.resources
