@@ -15,13 +15,13 @@ namespace CackoNemaKompiri_VP
     public partial class Game : Form
     {
         bool left, right;
-        int speed = 8;
+        int speed = 7;
         int score = 0;
         int missed = 0;
         int counterSpeed = 0;
         int floor = 1;
-        //int life;
         int dir = 0; // 0 - levo; 1 - desno
+        int i = 0;
 
         Random randomX = new Random();
         Random randomY = new Random();
@@ -98,21 +98,21 @@ namespace CackoNemaKompiri_VP
         {
             lblScore.Text = "Score: " + score;
 
-            if (left == true && Cacko.Left > 0)
+            if (left == true && Cacko.Left > 0) // ako e pritisnato kopce za levo i levata strana na Cacko e > 0
             {
-                Cacko.Left -= 15;
-                Cacko.Image = Properties.Resources.left;
-                dir = 0;
+                Cacko.Left -= 15; // dvizi na levo 15 pixels
+                Cacko.Image = Properties.Resources.left; // ja menuva slikata za levo
+                dir = 0; // levo
             }
 
-            if (right == true && Cacko.Left + Cacko.Width < this.ClientSize.Width)
+            if (right == true && Cacko.Left + Cacko.Width < this.ClientSize.Width) // ako e pritisnato kopce za desno i Cacko ne izlaga desno od ekran
             {
-                Cacko.Left += 15; // go pomestuva igracot 15 pixels levo
-                Cacko.Image = Properties.Resources.right; // menuva slika
-                dir = 1;
+                Cacko.Left += 15; // go pomestuva igracot 15 pixels desno
+                Cacko.Image = Properties.Resources.right; // menuva slika za desno
+                dir = 1; // desno
             }
 
-            foreach (Control c in this.Controls)
+            foreach (Control c in this.Controls) // se izminuvaat site komponenti vo prozorot
             {
 
                 if (c is PictureBox && (string)c.Tag == "Kompiri") // ako e kompir
@@ -120,10 +120,10 @@ namespace CackoNemaKompiri_VP
 
                     c.Top += speed; // nosi nadolu
 
-                    if (c.Top + c.Height > this.ClientSize.Height) // ako stigne do krajot na ekranot
+                    if (c.Top + c.Height > this.ClientSize.Height) // ako stigne do dnoto na ekranot
                     {
                         splash.Image = Properties.Resources.pire;
-                        splash.Location = new Point(c.Location.X, c.Location.Y - 5); // -20
+                        splash.Location = c.Location; // da se smeni slika od pire na istata lokacija kako kompirot
                         splash.Height = 50;
                         splash.Width = 70;
                         splash.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -132,10 +132,23 @@ namespace CackoNemaKompiri_VP
                         sp = new SoundPlayer(@"splat.wav");
                         sp.PlaySync();
 
-                        this.Controls.Add(splash);
+                        this.Controls.Add(splash); // se dodava slikata od pire
 
-                        c.Top = randomY.Next(80, 300) * -1;
-                        c.Left = randomX.Next(5, this.ClientSize.Width - c.Width);
+                        // random spawn 
+                        //c.Top = randomY.Next(50, 300) * -1;
+                        //c.Left = randomX.Next(c.Width, this.ClientSize.Width - c.Width);
+
+                        if (c.Name == "k1")
+                        {
+                            c.Top = randomY.Next(50, 100) * -1;
+                            c.Left = randomX.Next(c.Width, this.ClientSize.Width / 2);
+                        }
+                        else if (c.Name == "k2")
+                        {
+                            c.Top = randomY.Next(300, 350) * -1;
+                            c.Left = randomX.Next(this.ClientSize.Width / 2, this.ClientSize.Width - c.Width);
+                        }
+
                         missed += 1;
                         hearts();
 
@@ -145,14 +158,26 @@ namespace CackoNemaKompiri_VP
                         else if (dir == 1)
                         {
                             Cacko.Image = Properties.Resources.rightERROR;
-                        }
-                        
+                        }  
                     }
 
-                    if (Cacko.Bounds.IntersectsWith(c.Bounds)) // go sobral kompirot
+                    if (Cacko.Bounds.IntersectsWith(c.Bounds)) // Cacko go sobral kompirot
                     {
-                        c.Top = randomY.Next(80, 300) * -1;
-                        c.Left = randomX.Next(5, this.ClientSize.Width - c.Width);
+                        //random spawn
+                        //c.Top = randomY.Next(50, 300) * -1;
+                        //c.Left = randomX.Next(c.Width, this.ClientSize.Width - c.Width);
+
+                        if (c.Name == "k1")
+                        {
+                            c.Top = randomY.Next(150, 200) * -1;
+                            c.Left = randomX.Next(c.Width, this.ClientSize.Width / 2);
+                        }
+                        else if (c.Name == "k2")
+                        {
+                            c.Top = randomY.Next(400, 450) * -1;
+                            c.Left = randomX.Next(this.ClientSize.Width / 2, this.ClientSize.Width - c.Width);
+                        }
+
                         score += 1;
                         counterSpeed += 1;
                     }
@@ -260,13 +285,25 @@ namespace CackoNemaKompiri_VP
 
         private void restartGame()
         {
-            foreach (Control x in this.Controls)
+            foreach (Control c in this.Controls)
             {
-                if (x is PictureBox && (string)x.Tag == "Kompiri") // gi naogja kompirite
+                if (c is PictureBox && (string)c.Tag == "Kompiri") // gi naogja kompirite
                 {
                     // random gi spawn-nuva
-                    x.Top = randomY.Next(80, 300) * -1;
-                    x.Left = randomX.Next(5, this.ClientSize.Width - x.Width);
+                    //x.Top = randomY.Next(50, 100) * -1;
+                    //x.Left = randomX.Next(5, this.ClientSize.Width - x.Width);
+
+                    if (c.Name == "k1")
+                    {
+                        c.Top = randomY.Next(50, 100) * -1;
+                        c.Left = randomX.Next(c.Width, this.ClientSize.Width / 2);
+                    }
+                    else if (c.Name == "k2")
+                    {
+                        c.Top = randomY.Next(300, 350) * -1;
+                        c.Left = randomX.Next(this.ClientSize.Width / 2, this.ClientSize.Width - c.Width);
+                    }
+
                 }
             }
 
@@ -295,7 +332,7 @@ namespace CackoNemaKompiri_VP
 
             score = 0;
             missed = 0;
-            speed = 8;
+            speed = 7;
 
             left = false;
             right = false;
