@@ -59,6 +59,8 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
         }
 ```
 
+![Screenshot_7](https://user-images.githubusercontent.com/80720596/200137083-7ee4824d-081a-4904-bc26-1608f46b5f75.png) <br>
+
 #### Player Movement:
 Движењето е овозможено на следниот начин:
 
