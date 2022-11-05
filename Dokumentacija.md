@@ -11,6 +11,7 @@ https://www.youtube.com/watch?v=OnZWBggRHw0
 ### How to play?
 Играчот(со ликот на Цацко) може да се движи лево и десно со помош на стрелките од тастатура или копчињата <kbd>А</kbd> и <kbd>D</kbd>. <br>
 Целта на Цацко е да собере што повеќе компири за пире без притоа да промаши повеќе од 5 пати. <br>
+<br>
 demo: https://youtu.be/KWaFtcJf4lA
 
 ### Start Menu:
