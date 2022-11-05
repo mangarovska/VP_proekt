@@ -21,7 +21,6 @@ namespace CackoNemaKompiri_VP
         int counterSpeed = 0;
         int floor = 1;
         int dir = 0; // 0 - levo; 1 - desno
-        int i = 0;
 
         Random randomX = new Random();
         Random randomY = new Random();
@@ -140,12 +139,12 @@ namespace CackoNemaKompiri_VP
 
                         if (c.Name == "k1")
                         {
-                            c.Top = randomY.Next(50, 100) * -1;
+                            c.Top = randomY.Next(50, 51) * -1;
                             c.Left = randomX.Next(c.Width, this.ClientSize.Width / 2);
                         }
                         else if (c.Name == "k2")
                         {
-                            c.Top = randomY.Next(300, 350) * -1;
+                            c.Top = randomY.Next(500, 501) * -1;
                             c.Left = randomX.Next(this.ClientSize.Width / 2, this.ClientSize.Width - c.Width);
                         }
 
@@ -169,12 +168,12 @@ namespace CackoNemaKompiri_VP
 
                         if (c.Name == "k1")
                         {
-                            c.Top = randomY.Next(150, 200) * -1;
+                            c.Top = randomY.Next(150, 151) * -1;
                             c.Left = randomX.Next(c.Width, this.ClientSize.Width / 2);
                         }
                         else if (c.Name == "k2")
                         {
-                            c.Top = randomY.Next(400, 450) * -1;
+                            c.Top = randomY.Next(600, 601) *  -1;
                             c.Left = randomX.Next(this.ClientSize.Width / 2, this.ClientSize.Width - c.Width);
                         }
 
@@ -295,12 +294,12 @@ namespace CackoNemaKompiri_VP
 
                     if (c.Name == "k1")
                     {
-                        c.Top = randomY.Next(50, 100) * -1;
+                        c.Top = randomY.Next(50, 51) * -1;
                         c.Left = randomX.Next(c.Width, this.ClientSize.Width / 2);
                     }
                     else if (c.Name == "k2")
                     {
-                        c.Top = randomY.Next(300, 350) * -1;
+                        c.Top = randomY.Next(500, 501) * -1;
                         c.Left = randomX.Next(this.ClientSize.Width / 2, this.ClientSize.Width - c.Width);
                     }
 
