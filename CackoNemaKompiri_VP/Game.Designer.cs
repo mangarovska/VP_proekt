@@ -1,6 +1,6 @@
 ﻿namespace CackoNemaKompiri_VP
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblRestart = new System.Windows.Forms.Label();
             this.lblGameOver = new System.Windows.Forms.Label();
@@ -54,7 +54,8 @@
             this.MPForm = new AxWMPLib.AxWindowsMediaPlayer();
             this.lblFloorNumber = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.k2 = new System.Windows.Forms.PictureBox();
+            this.k1 = new System.Windows.Forms.PictureBox();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.life5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.life4)).BeginInit();
@@ -66,7 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
             this.pausedMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MPForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
@@ -255,7 +257,7 @@
             this.pausedMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pausedMenu.Location = new System.Drawing.Point(79, 216);
             this.pausedMenu.Name = "pausedMenu";
-            this.pausedMenu.Size = new System.Drawing.Size(434, 206);
+            this.pausedMenu.Size = new System.Drawing.Size(441, 206);
             this.pausedMenu.TabIndex = 8;
             this.pausedMenu.TabStop = false;
             // 
@@ -339,19 +341,31 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "FLOOR: ";
             // 
-            // pictureBox1
+            // k2
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(272, 113);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "Kompiri";
+            this.k2.BackColor = System.Drawing.Color.Transparent;
+            this.k2.Image = global::CackoNemaKompiri_VP.Properties.Resources.potato;
+            this.k2.Location = new System.Drawing.Point(378, 113);
+            this.k2.Name = "k2";
+            this.k2.Size = new System.Drawing.Size(43, 39);
+            this.k2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.k2.TabIndex = 5;
+            this.k2.TabStop = false;
+            this.k2.Tag = "Kompiri";
             // 
-            // Form1
+            // k1
+            // 
+            this.k1.BackColor = System.Drawing.Color.Transparent;
+            this.k1.Image = global::CackoNemaKompiri_VP.Properties.Resources.potato;
+            this.k1.Location = new System.Drawing.Point(166, 113);
+            this.k1.Name = "k1";
+            this.k1.Size = new System.Drawing.Size(43, 39);
+            this.k1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.k1.TabIndex = 5;
+            this.k1.TabStop = false;
+            this.k1.Tag = "Kompiri";
+            // 
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -371,17 +385,17 @@
             this.Controls.Add(this.life3);
             this.Controls.Add(this.life2);
             this.Controls.Add(this.life1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.k1);
+            this.Controls.Add(this.k2);
             this.Controls.Add(this.Cacko);
             this.Controls.Add(this.lblHighScoreValue);
             this.Controls.Add(this.lblHighScore);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Цацко нема компири";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form_KeyUp);
             this.Menu.ResumeLayout(false);
@@ -397,7 +411,8 @@
             this.pausedMenu.ResumeLayout(false);
             this.pausedMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MPForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.k1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,7 +444,8 @@
         private AxWMPLib.AxWindowsMediaPlayer MPForm;
         private System.Windows.Forms.Label lblFloorNumber;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox k2;
+        private System.Windows.Forms.PictureBox k1;
     }
 }
 
